@@ -1,0 +1,97 @@
+body{
+    background: #f1f1f1;
+}
+/*-------------Genèrics------------*/
+.contenidor{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    align-content: stretch;
+    overflow: hidden;
+    position: absolute;
+}
+.gen{
+    width: 25%;
+    margin: 3px;
+    overflow: hidden;
+    position: relative;
+}
+h2{
+    margin:0;
+    padding: 0;
+    font-size: 36px;   
+}
+.gen::before{
+    content: "";
+    position: absolute;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    transform: skew(25deg) scaleY(1) translate(0,0);
+    animation: prin .2s;
+}
+/*----------Hovers genèrics----------*/
+.gen:hover::before{
+    animation: efe .2s forwards; 
+}
+/*-------------Divs concrets --------------*/
+.conc{
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    color: #ffffff;
+    
+}
+.it{
+    background: rgb(43, 81, 248);
+    animation: esq .4s;
+}
+.a{
+    background: rgb(11, 227, 255);
+    animation: dalt .6s;
+}
+.ca{
+    background: rgb(163, 44, 173);
+    animation: baix .8s; 
+}
+.de{
+    background: rgb(253, 219, 23);
+    animation: dalt .9s;
+}
+.my{
+    background: rgb(252, 58, 32);
+    animation: dret 1s;
+}
+/*--------------- keyframe ---------------*/
+/*---------------transicions ------------------*/
+@keyframes efe{
+    0%{transform: skew(25deg);}
+    100%{transform: skew(0deg);}
+}
+@keyframes prin{
+    0%{transform: skew(0deg);}
+    100%{transform:skew(25deg);}
+}
+
+/*--------------Animacions entrada -----------------*/
+@keyframes esq{
+    0%{transform: translateX(-250px);}
+    100%{transform: translateX(0px);}
+}
+@keyframes dalt{
+    0%{transform: translateY(1000px);}
+    10%{transform: translateY(1000px);}
+    100%{transform: translateY(0px);}
+}
+@keyframes baix{
+    0%{transform: translateY(-1000px);}
+    20%{transform: translateY(-1000px);}
+    100%{transform: translateY(0px);}
+}
+@keyframes dret{
+    0%{transform: translateX(250px);}
+    30%{transform: translateX(250px);}
+    100%{transform: translateX(0px);}
+}
